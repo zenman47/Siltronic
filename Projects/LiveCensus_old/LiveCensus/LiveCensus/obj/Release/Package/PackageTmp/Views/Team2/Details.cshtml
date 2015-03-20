@@ -1,0 +1,66 @@
+﻿@model LiveCensus.Models.Team2
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Team2</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cell5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditDt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditDt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

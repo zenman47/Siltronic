@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Team1Entities">
+    <EntitySetMapping Name="LCEN_HOURS">
+      <EntityTypeMapping TypeName="Model.LCEN_HOURS">
+        <MappingFragment StoreEntitySet="LCEN_HOURS">
+          <ScalarProperty Name="HOUR_ID" ColumnName="HOUR_ID" />
+          <ScalarProperty Name="HRNUM" ColumnName="HRNUM" />
+          <ScalarProperty Name="HRDISP" ColumnName="HRDISP" />
+          <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCEN_ROLES">
+      <EntityTypeMapping TypeName="Model.LCEN_ROLES">
+        <MappingFragment StoreEntitySet="LCEN_ROLES">
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCEN_SHIFTS">
+      <EntityTypeMapping TypeName="Model.LCEN_SHIFTS">
+        <MappingFragment StoreEntitySet="LCEN_SHIFTS">
+          <ScalarProperty Name="SHIFT_ID" ColumnName="SHIFT_ID" />
+          <ScalarProperty Name="SHIFTNUM" ColumnName="SHIFTNUM" />
+          <ScalarProperty Name="SHIFTDISP" ColumnName="SHIFTDISP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Team1">
+      <EntityTypeMapping TypeName="Model.LCEN_TEAM1">
+        <MappingFragment StoreEntitySet="LCEN_TEAM1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EFFDT" ColumnName="EFFDT" />
+          <ScalarProperty Name="HOUR" ColumnName="HOUR" />
+          <ScalarProperty Name="SHIFT" ColumnName="SHIFT" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDT" ColumnName="CREATEDDT" />
+          <ScalarProperty Name="EDITEDBY" ColumnName="EDITEDBY" />
+          <ScalarProperty Name="EDITEDDT" ColumnName="EDITEDDT" />
+          <ScalarProperty Name="CELL1" ColumnName="CELL1" />
+          <ScalarProperty Name="CELL2" ColumnName="CELL2" />
+          <ScalarProperty Name="CELL3" ColumnName="CELL3" />
+          <ScalarProperty Name="CELL4" ColumnName="CELL4" />
+          <ScalarProperty Name="CELL6" ColumnName="CELL6" />
+          <ScalarProperty Name="CELL7" ColumnName="CELL7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LCEN_USERS">
+      <EntityTypeMapping TypeName="Model.LCEN_USERS">
+        <MappingFragment StoreEntitySet="LCEN_USERS">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="FULL_NAME" ColumnName="FULL_NAME" />
+          <ScalarProperty Name="USER_EMAIL" ColumnName="USER_EMAIL" />
+          <ScalarProperty Name="USER_ROLE" ColumnName="USER_ROLE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

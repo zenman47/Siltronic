@@ -1,0 +1,122 @@
+﻿@model LiveCensus2.Models.Team1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Team1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LCEN_HOURS.HRNUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LCEN_HOURS.HRNUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LCEN_SHIFTS.SHIFTNUM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LCEN_SHIFTS.SHIFTNUM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LCEN_USERS.FIRST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LCEN_USERS.FIRST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LCEN_USERS1.FIRST_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LCEN_USERS1.FIRST_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EFFDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EFFDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATEDDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATEDDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDITEDDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDITEDDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELL1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELL1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELL2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELL2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELL3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELL3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELL4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELL4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELL6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELL6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CELL7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CELL7)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

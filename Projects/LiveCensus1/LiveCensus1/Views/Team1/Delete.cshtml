@@ -1,0 +1,112 @@
+﻿@model LiveCensus.Models.Team1
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Team1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.effdt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.effdt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EditedDt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EditedDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cell7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cell7)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

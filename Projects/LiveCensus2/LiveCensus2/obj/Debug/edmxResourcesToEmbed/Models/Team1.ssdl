@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LCEN_HOURS">
+    <Key>
+      <PropertyRef Name="HOUR_ID" />
+    </Key>
+    <Property Name="HOUR_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="HRNUM" Type="varchar2" MaxLength="4" />
+    <Property Name="HRDISP" Type="varchar2" MaxLength="20" />
+    <Property Name="SHIFT" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="LCEN_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DESCR" Type="varchar2" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="LCEN_SHIFTS">
+    <Key>
+      <PropertyRef Name="SHIFT_ID" />
+    </Key>
+    <Property Name="SHIFT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="SHIFTNUM" Type="varchar2" MaxLength="1" />
+    <Property Name="SHIFTDISP" Type="varchar2" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="LCEN_TEAM1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="EFFDT" Type="date" Nullable="false" />
+    <Property Name="HOUR" Type="number" Precision="38" Scale="0" />
+    <Property Name="SHIFT" Type="number" Precision="38" Scale="0" />
+    <Property Name="CREATEDBY" Type="varchar2" MaxLength="20" />
+    <Property Name="CREATEDDT" Type="date" />
+    <Property Name="EDITEDBY" Type="varchar2" MaxLength="20" />
+    <Property Name="EDITEDDT" Type="date" />
+    <Property Name="CELL1" Type="number" Precision="38" Scale="0" />
+    <Property Name="CELL2" Type="number" Precision="38" Scale="0" />
+    <Property Name="CELL3" Type="number" Precision="38" Scale="0" />
+    <Property Name="CELL4" Type="number" Precision="38" Scale="0" />
+    <Property Name="CELL6" Type="number" Precision="38" Scale="0" />
+    <Property Name="CELL7" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="LCEN_USERS">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="varchar2" MaxLength="6" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="LAST_NAME" Type="varchar2" MaxLength="20" />
+    <Property Name="FULL_NAME" Type="varchar2" MaxLength="50" />
+    <Property Name="USER_EMAIL" Type="varchar2" MaxLength="100" />
+    <Property Name="USER_ROLE" Type="number" Precision="38" Scale="0" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <Association Name="LCEN_HOURS_FK1">
+    <End Role="LCEN_SHIFTS" Type="Self.LCEN_SHIFTS" Multiplicity="0..1" />
+    <End Role="LCEN_HOURS" Type="Self.LCEN_HOURS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCEN_SHIFTS">
+        <PropertyRef Name="SHIFT_ID" />
+      </Principal>
+      <Dependent Role="LCEN_HOURS">
+        <PropertyRef Name="SHIFT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LCEN_TEAM1_FK1">
+    <End Role="LCEN_USERS" Type="Self.LCEN_USERS" Multiplicity="0..1" />
+    <End Role="LCEN_TEAM1" Type="Self.LCEN_TEAM1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCEN_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="LCEN_TEAM1">
+        <PropertyRef Name="CREATEDBY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LCEN_TEAM1_FK2">
+    <End Role="LCEN_USERS" Type="Self.LCEN_USERS" Multiplicity="0..1" />
+    <End Role="LCEN_TEAM1" Type="Self.LCEN_TEAM1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCEN_USERS">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="LCEN_TEAM1">
+        <PropertyRef Name="EDITEDBY" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LCEN_TEAM1_FK3">
+    <End Role="LCEN_HOURS" Type="Self.LCEN_HOURS" Multiplicity="0..1" />
+    <End Role="LCEN_TEAM1" Type="Self.LCEN_TEAM1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCEN_HOURS">
+        <PropertyRef Name="HOUR_ID" />
+      </Principal>
+      <Dependent Role="LCEN_TEAM1">
+        <PropertyRef Name="HOUR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LCEN_TEAM1_FK4">
+    <End Role="LCEN_SHIFTS" Type="Self.LCEN_SHIFTS" Multiplicity="0..1" />
+    <End Role="LCEN_TEAM1" Type="Self.LCEN_TEAM1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCEN_SHIFTS">
+        <PropertyRef Name="SHIFT_ID" />
+      </Principal>
+      <Dependent Role="LCEN_TEAM1">
+        <PropertyRef Name="SHIFT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LCEN_USERS_FK1">
+    <End Role="LCEN_ROLES" Type="Self.LCEN_ROLES" Multiplicity="0..1" />
+    <End Role="LCEN_USERS" Type="Self.LCEN_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LCEN_ROLES">
+        <PropertyRef Name="ROLE_ID" />
+      </Principal>
+      <Dependent Role="LCEN_USERS">
+        <PropertyRef Name="USER_ROLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="LCEN_HOURS" EntityType="Self.LCEN_HOURS" Schema="APP_OWNER" store:Type="Tables" />
+    <EntitySet Name="LCEN_ROLES" EntityType="Self.LCEN_ROLES" Schema="APP_OWNER" store:Type="Tables" />
+    <EntitySet Name="LCEN_SHIFTS" EntityType="Self.LCEN_SHIFTS" Schema="APP_OWNER" store:Type="Tables" />
+    <EntitySet Name="LCEN_TEAM1" EntityType="Self.LCEN_TEAM1" Schema="APP_OWNER" store:Type="Tables" />
+    <EntitySet Name="LCEN_USERS" EntityType="Self.LCEN_USERS" Schema="APP_OWNER" store:Type="Tables" />
+    <AssociationSet Name="LCEN_HOURS_FK1" Association="Self.LCEN_HOURS_FK1">
+      <End Role="LCEN_SHIFTS" EntitySet="LCEN_SHIFTS" />
+      <End Role="LCEN_HOURS" EntitySet="LCEN_HOURS" />
+    </AssociationSet>
+    <AssociationSet Name="LCEN_TEAM1_FK1" Association="Self.LCEN_TEAM1_FK1">
+      <End Role="LCEN_USERS" EntitySet="LCEN_USERS" />
+      <End Role="LCEN_TEAM1" EntitySet="LCEN_TEAM1" />
+    </AssociationSet>
+    <AssociationSet Name="LCEN_TEAM1_FK2" Association="Self.LCEN_TEAM1_FK2">
+      <End Role="LCEN_USERS" EntitySet="LCEN_USERS" />
+      <End Role="LCEN_TEAM1" EntitySet="LCEN_TEAM1" />
+    </AssociationSet>
+    <AssociationSet Name="LCEN_TEAM1_FK3" Association="Self.LCEN_TEAM1_FK3">
+      <End Role="LCEN_HOURS" EntitySet="LCEN_HOURS" />
+      <End Role="LCEN_TEAM1" EntitySet="LCEN_TEAM1" />
+    </AssociationSet>
+    <AssociationSet Name="LCEN_TEAM1_FK4" Association="Self.LCEN_TEAM1_FK4">
+      <End Role="LCEN_SHIFTS" EntitySet="LCEN_SHIFTS" />
+      <End Role="LCEN_TEAM1" EntitySet="LCEN_TEAM1" />
+    </AssociationSet>
+    <AssociationSet Name="LCEN_USERS_FK1" Association="Self.LCEN_USERS_FK1">
+      <End Role="LCEN_ROLES" EntitySet="LCEN_ROLES" />
+      <End Role="LCEN_USERS" EntitySet="LCEN_USERS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
